@@ -2,15 +2,15 @@ ng-vega
 ------------
 
 Angular directive for rendering [Vega](http://vega.github.io/) specs.
-This project was forked and modified from [angular-vega](https://github.com/eptify/angular-vega) which was written for Vega 1 and became inactive.
-The current version of ng-vega supports Vega 2.
+This project was forked and modified from [ng-vega](https://github.com/kristw/ng-vega) which was written for Vega 2.
+The current version of ng-vega supports Vega 3.
 
 ### Demo
 
 - [Simple demo](http://kristw.github.io/ng-vega) -- Select dataset/renderer to see the chart changes and see the [code](https://github.com/kristw/ng-vega/blob/master/examples/index.html) to see how it was implemented.
 - [Vega editor demo](http://kristw.github.io/ng-vega/editor.html) -- Implement Vega editor using ng-vega.
 
-For more information about Vega, please refer to [official documentation](http://trifacta.github.io/vega/).
+For more information about Vega, please refer to [official documentation](http://vega.github.io/).
 
 ### Usage
 
@@ -95,6 +95,7 @@ require('ng-vega');
 ### Author
 
 Krist Wongsuphasawat / [@kristw](https://twitter.com/kristw)
+Lima Lima Charlie, LLC.
 
 
-Copyright (c) 2016 Krist Wongsuphasawat. MIT License
+Copyright (c) 2016 Krist Wongsuphasawat, Lima Lima Charlie, LLC.. MIT License
