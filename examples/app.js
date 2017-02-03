@@ -1,4 +1,4 @@
-var example = angular.module('exampleApp', ['ngVega']);
+var example = angular.module('exampleApp', ['ngVega3']);
 
 example.controller('BarChartController', function($scope) {
   $scope.renderer = 'canvas';

@@ -1,4 +1,4 @@
-angular.module('exampleEditor', ['ngVega', 'ui.ace'])
+angular.module('exampleEditor', ['ngVega3', 'ui.ace'])
   .controller('EditorController', function($scope) {
     $scope.renderer = 'canvas';
 

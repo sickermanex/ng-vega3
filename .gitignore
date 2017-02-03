@@ -1,2 +1,5 @@
-bower_components
+examples/bower_components
+examples/dist
+dist
+node_modules
 .grunt

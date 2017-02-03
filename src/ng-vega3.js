@@ -35,7 +35,7 @@
     };
   }
 
-  return angular.module('ngVega', [])
+  return angular.module('ngVega3', [])
     .directive('vega', function() {
       return {
         restrict: 'AE',
