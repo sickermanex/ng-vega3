@@ -24,8 +24,8 @@ module.exports = function (grunt) {
         src:  'src',
         test: 'test',
         dist: 'dist',
-        projectName: 'ng-vega',
-        outputName: 'ng-vega'
+        projectName: 'ng-vega3',
+        outputName: 'ng-vega3'
       };
       return config;
     }

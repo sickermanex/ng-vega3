@@ -1,7 +1,7 @@
-ng-vega
+ng-vega3
 ------------
 
-Angular directive for rendering [Vega](http://vega.github.io/) specs.
+Angular directive for rendering [Vega3](http://vega.github.io/) specs.
 This project was forked and modified from [ng-vega](https://github.com/kristw/ng-vega) which was written for Vega 2.
 The current version of ng-vega supports Vega 3.
 
@@ -15,7 +15,7 @@ For more information about Vega, please refer to [official documentation](http:/
 ### Usage
 
 ```javascript
-angular.module('exampleApp', ['ngVega'])
+angular.module('exampleApp', ['ngVega3'])
 ```
 
 ```html
@@ -24,7 +24,7 @@ angular.module('exampleApp', ['ngVega'])
 
 - `spec` is `$scope.spec` in your controller.
 
-- `vega-data` (optional) can be used to pass dynamic data. In the example above, it is bound to `$scope.testData`. Data can be function to modify the values (Vega 2 syntax) or raw values (and ng-vega will convert it to function to make it work for you).
+- `vega-data` (optional) can be used to pass dynamic data. In the example above, it is bound to `$scope.testData`. Data can be function to modify the values (Vega 3 syntax) or raw values (and ng-vega3 will convert it to function to make it work for you).
 
 ```javascript
 $scope.testData = {
@@ -46,18 +46,18 @@ $scope.testData = {
 ### Installation
 
 ```
-bower install ng-vega --save
+bower install ng-vega3 --save
 ```
 
 or
 
 ```
-npm install ng-vega --save
+npm install ng-vega3 --save
 ```
 
 ### Import into your project
 
-Angular module `ngVega` will be available once you do one of the following:
+Angular module `ngVega3` will be available once you do one of the following:
 
 ##### Choice 1. Global
 
@@ -66,7 +66,7 @@ Adding this library via ```<script>``` tag is the simplest way.
 ```html
 <script src="path/to/angular.js"></script>
 <script src="path/to/vega.js"></script>
-<script src="path/to/ng-vega.min.js"></script>
+<script src="path/to/ng-vega3.min.js"></script>
 ```
 
 ##### Choice 2: AMD
@@ -76,12 +76,12 @@ If you use requirejs, this library support AMD out of the box.
 ```javascript
 require.config({
   paths: {
-    angular:   'path/to/angular',
-    vega:      'path/to/vega',
-    'ng-vega': 'path/to/ng-vega'
+    angular:    'path/to/angular',
+    vega:       'path/to/vega',
+    'ng-vega3': 'path/to/ng-vega3'
   }
 });
-require(['ng-vega'], function() {
+require(['ng-vega3'], function() {
   // do something
 });
 ```
@@ -89,13 +89,10 @@ require(['ng-vega'], function() {
 ##### Choice 3: node.js / browserify
 
 ```javascript
-require('ng-vega');
+require('ng-vega3');
 ```
 
 ### Author
 
-Krist Wongsuphasawat / [@kristw](https://twitter.com/kristw)
-Lima Lima Charlie, LLC.
-
-
-Copyright (c) 2016 Krist Wongsuphasawat, Lima Lima Charlie, LLC.. MIT License
+Original work Copyright (c) 2016 Krist Wongsuphasawat
+Modified work Copyright (c) 2017 Lima Lima Charlie, LLC.
