@@ -21,7 +21,7 @@ cd examples
 python -m SimpleHTTPServer 8000
 ```
 
-Please note: bower does not seem to set up Vega correctly and at this time `vega*` needs to be copied from `npm_modeles` to `examples/bower_components/vega/`.
+Please note: bower does not seem to set up Vega correctly and at this time `vega*` needs to be copied from `npm_modules/vega` to `examples/bower_components/vega/`.
 
 ### Demo
 
