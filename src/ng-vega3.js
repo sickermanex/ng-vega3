@@ -12,9 +12,9 @@
   }
   else {
     // Just define it in angular and done
-    factory(root.angular, root.vg);
+    factory(root.angular, root.vega);
   }
-}(this, function (angular, vg) {
+}(this, function (angular, vega) {
   //---------------------------------------------------
   // BEGIN code for this module
   //---------------------------------------------------
@@ -47,16 +47,19 @@
         link: function(scope, elements, attrs) {
           var element = elements[0];
           var view;
-          var processedData;
+          var processedData/*ChangeSet*/;
 
           function parse(){
-            vg.parse.spec(scope.spec, function(chart) {
-              view = chart({
-                el: element,
-                data: processedData,
-                renderer: scope.renderer || 'svg'
-              }).update();
+            var runtime = vega.parse(scope.spec);
+            view = new vega.View(runtime)
+                          .logLevel(vega.Warn)
+                          .initialize(element)
+                          .renderer(scope.renderer || 'svg')
+                          .hover();
+            Object.keys(processedData).forEach(function(key){
+              view.change(key, processedData[key]);
             });
+            view.run();
           }
 
           var debouncedParse = debounce(parse, 50);
@@ -69,24 +72,24 @@
             if(angular.isDefined(data)){
               Object.keys(data).forEach(function(key){
                 var value = data[key];
-                processedData[key] = angular.isFunction(value) ? value : function(dat){
-                  dat.remove(function(d){return true;})
-                    .insert(value);
-                };
+                processedData[key] = angular.isFunction(value) 
+                                        ? value 
+                                        : vega.changeset()
+                                                .remove(function(d){return true;})
+                                                .insert(value);
+                if(view) { view.change(key, processedData[key]); }
               });
             }
-
             if(view){
-              view.data(processedData).update();
-            }
-            else{
+              view.run();
+            }else{
               debouncedParse();
             }
           }, true);
 
           scope.$watch('renderer', function(renderer){
             if(view){
-              view.renderer(renderer).update();
+              view.renderer(renderer).run();
             }
             else{
               debouncedParse();
