@@ -5,6 +5,24 @@ Angular directive for rendering [Vega3](http://vega.github.io/) specs.
 This project was forked and modified from [ng-vega](https://github.com/kristw/ng-vega) which was written for Vega 2.
 The current version of ng-vega supports Vega 3.
 
+### Build
+
+```bash
+npm install
+grunt build
+```
+
+To build the examples and start a local webserver:
+```bash
+npm install
+grunt build
+bower install
+cd examples
+python -m SimpleHTTPServer 8000
+```
+
+Please note: bower does not seem to set up Vega correctly and at this time `vega*` needs to be copied from `npm_modeles` to `examples/bower_components/vega/`.
+
 ### Demo
 
 - [Simple demo](http://kristw.github.io/ng-vega) -- Select dataset/renderer to see the chart changes and see the [code](https://github.com/kristw/ng-vega/blob/master/examples/index.html) to see how it was implemented.
